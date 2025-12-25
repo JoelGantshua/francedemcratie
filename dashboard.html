@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard Admin — Présidentielle 2027</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        body {
+            background: #f6f8fb;
+        }
+        .dashboard-header {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: #fff;
+            padding: 2rem;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+        .dashboard-header h1 {
+            margin: 0;
+            font-size: 2rem;
+        }
+        .dashboard-nav {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+            flex-wrap: wrap;
+        }
+        .dashboard-nav button {
+            background: rgba(255,255,255,0.2);
+            color: #fff;
+            border: 1px solid rgba(255,255,255,0.3);
+            padding: 8px 16px;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        .dashboard-nav button:hover,
+        .dashboard-nav button.active {
+            background: rgba(255,255,255,0.3);
+        }
+        .dashboard-content {
+            max-width: 1400px;
+            margin: 2rem auto;
+            padding: 0 2rem;
+        }
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+        .stat-card {
+            background: #fff;
+            padding: 1.5rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+            text-align: center;
+        }
+        .stat-card h3 {
+            color: var(--muted);
+            font-size: 0.9rem;
+            margin-bottom: 0.5rem;
+        }
+        .stat-card .number {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--primary-color);
+        }
+        .data-section {
+            background: #fff;
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+            margin-bottom: 2rem;
+        }
+        .data-section h2 {
+            color: var(--primary-color);
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid #e6eef9;
+        }
+        .data-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 1rem;
+        }
+        .data-table th,
+        .data-table td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid #e6eef9;
+        }
+        .data-table th {
+            background: #f6f8fb;
+            font-weight: 600;
+            color: var(--primary-color);
+        }
+        .data-table tr:hover {
+            background: #f9fafb;
+        }
+        .logout-btn {
+            background: rgba(255,255,255,0.2);
+            color: #fff;
+            border: 1px solid rgba(255,255,255,0.3);
+            padding: 8px 16px;
+            border-radius: 8px;
+            cursor: pointer;
+            margin-left: auto;
+        }
+        .loading {
+            text-align: center;
+            padding: 2rem;
+            color: var(--muted);
+        }
+        .empty-state {
+            text-align: center;
+            padding: 3rem;
+            color: var(--muted);
+        }
+    </style>
+</head>
+<body>
+    <div class="dashboard-header">
+        <div style="display: flex; justify-content: space-between; align-items: center;">
+            <h1>Dashboard Admin — France Démocratie</h1>
+            <button class="logout-btn" onclick="logout()">Déconnexion</button>
+        </div>
+        <div class="dashboard-nav">
+            <button class="active" onclick="showSection('contact')">Contact</button>
+            <button onclick="showSection('engagements')">Engagements</button>
+            <button onclick="showSection('volunteers')">Bénévoles</button>
+            <button onclick="showSection('newsletters')">Newsletters</button>
+            <button onclick="showSection('surveys')">Sondages</button>
+        </div>
+    </div>
+
+    <div class="dashboard-content">
+        <div class="stats-grid">
+            <div class="stat-card">
+                <h3>Messages Contact</h3>
+                <div class="number" id="stat-contact">0</div>
+            </div>
+            <div class="stat-card">
+                <h3>Engagements</h3>
+                <div class="number" id="stat-engagements">0</div>
+            </div>
+            <div class="stat-card">
+                <h3>Bénévoles</h3>
+                <div class="number" id="stat-volunteers">0</div>
+            </div>
+            <div class="stat-card">
+                <h3>Newsletters</h3>
+                <div class="number" id="stat-newsletters">0</div>
+            </div>
+            <div class="stat-card">
+                <h3>Sondages</h3>
+                <div class="number" id="stat-surveys">0</div>
+            </div>
+        </div>
+
+        <div id="contact-section" class="data-section">
+            <h2>Messages de Contact</h2>
+            <div id="contact-data" class="loading">Chargement...</div>
+        </div>
+
+        <div id="engagements-section" class="data-section" style="display:none;">
+            <h2>Engagements</h2>
+            <div id="engagements-data" class="loading">Chargement...</div>
+        </div>
+
+        <div id="volunteers-section" class="data-section" style="display:none;">
+            <h2>Bénévoles</h2>
+            <div id="volunteers-data" class="loading">Chargement...</div>
+        </div>
+
+        <div id="newsletters-section" class="data-section" style="display:none;">
+            <h2>Newsletters</h2>
+            <div id="newsletters-data" class="loading">Chargement...</div>
+        </div>
+
+        <div id="surveys-section" class="data-section" style="display:none;">
+            <h2>Sondages</h2>
+            <div id="surveys-data" class="loading">Chargement...</div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script>
+        const supabaseUrl = 'https://ystkygxtnpexxibflbat.supabase.co';
+        const supabaseKey = 'sb_publishable_zgd82dC_FgpnBv4cM0ablw_MgptqTtf';
+        const supabase = supabase.createClient(supabaseUrl, supabaseKey);
+
+        // Vérifier l'authentification
+        function checkAuth() {
+            const isAuthenticated = localStorage.getItem('admin_authenticated') === 'true';
+            if (!isAuthenticated) {
+                window.location.href = 'login.html';
+                return false;
+            }
+            
+            // Vérifier que la session n'est pas expirée (24 heures)
+            const loginTime = parseInt(localStorage.getItem('admin_login_time') || '0');
+            const now = Date.now();
+            if (now - loginTime > 24 * 60 * 60 * 1000) {
+                localStorage.removeItem('admin_authenticated');
+                localStorage.removeItem('admin_email');
+                localStorage.removeItem('admin_login_time');
+                window.location.href = 'login.html';
+                return false;
+            }
+            
+            return true;
+        }
+
+        // Déconnexion
+        function logout() {
+            localStorage.removeItem('admin_authenticated');
+            localStorage.removeItem('admin_email');
+            localStorage.removeItem('admin_login_time');
+            window.location.href = 'login.html';
+        }
+
+        // Afficher une section
+        function showSection(section) {
+            document.querySelectorAll('.data-section').forEach(s => s.style.display = 'none');
+            document.querySelectorAll('.dashboard-nav button').forEach(b => b.classList.remove('active'));
+            document.getElementById(section + '-section').style.display = 'block';
+            event.target.classList.add('active');
+            loadData(section);
+        }
+
+        // Charger les données
+        async function loadData(type) {
+            const containerId = type + '-data';
+            const container = document.getElementById(containerId);
+            
+            try {
+                let { data, error } = {};
+                
+                switch(type) {
+                    case 'contact':
+                        ({ data, error } = await supabase.from('contact_form').select('*').order('created_at', { ascending: false }));
+                        break;
+                    case 'engagements':
+                        ({ data, error } = await supabase.from('engagements').select('*').order('created_at', { ascending: false }));
+                        break;
+                    case 'volunteers':
+                        ({ data, error } = await supabase.from('volunteers').select('*').order('created_at', { ascending: false }));
+                        break;
+                    case 'newsletters':
+                        ({ data, error } = await supabase.from('newsletters').select('*').order('created_at', { ascending: false }));
+                        break;
+                    case 'surveys':
+                        ({ data, error } = await supabase.from('surveys').select('*').order('created_at', { ascending: false }));
+                        break;
+                }
+
+                if (error) throw error;
+
+                if (!data || data.length === 0) {
+                    container.innerHTML = '<div class="empty-state">Aucune donnée disponible</div>';
+                    return;
+                }
+
+                // Mettre à jour les stats
+                updateStats(type, data.length);
+
+                // Afficher les données dans un tableau
+                container.innerHTML = renderTable(data, type);
+            } catch (error) {
+                container.innerHTML = '<div class="empty-state">Erreur: ' + error.message + '</div>';
+            }
+        }
+
+        // Rendre le tableau
+        function renderTable(data, type) {
+            if (!data || data.length === 0) return '<div class="empty-state">Aucune donnée</div>';
+
+            let headers = [];
+            let rows = '';
+
+            switch(type) {
+                case 'contact':
+                    headers = ['Date', 'Nom', 'Email', 'Téléphone', 'Message'];
+                    rows = data.map(item => `
+                        <tr>
+                            <td>${new Date(item.created_at).toLocaleDateString('fr-FR')}</td>
+                            <td>${item.name || '-'}</td>
+                            <td>${item.email || '-'}</td>
+                            <td>${item.phone || '-'}</td>
+                            <td>${(item.message || '-').substring(0, 100)}${(item.message || '').length > 100 ? '...' : ''}</td>
+                        </tr>
+                    `).join('');
+                    break;
+                case 'engagements':
+                    headers = ['Date', 'Nom', 'Email', 'Téléphone', 'Type', 'Déjà engagé'];
+                    rows = data.map(item => `
+                        <tr>
+                            <td>${new Date(item.created_at).toLocaleDateString('fr-FR')}</td>
+                            <td>${item.name || '-'}</td>
+                            <td>${item.email || '-'}</td>
+                            <td>${item.phone || '-'}</td>
+                            <td>${item.type || '-'}</td>
+                            <td>${item.deja_engage ? 'Oui' : 'Non'}</td>
+                        </tr>
+                    `).join('');
+                    break;
+                case 'volunteers':
+                    headers = ['Date', 'Nom', 'Email', 'Rôle', 'Message'];
+                    rows = data.map(item => `
+                        <tr>
+                            <td>${new Date(item.created_at).toLocaleDateString('fr-FR')}</td>
+                            <td>${item.name || '-'}</td>
+                            <td>${item.email || '-'}</td>
+                            <td>${item.role || '-'}</td>
+                            <td>${(item.message || '-').substring(0, 100)}${(item.message || '').length > 100 ? '...' : ''}</td>
+                        </tr>
+                    `).join('');
+                    break;
+                case 'newsletters':
+                    headers = ['Date', 'Email', 'Code postal'];
+                    rows = data.map(item => `
+                        <tr>
+                            <td>${new Date(item.created_at).toLocaleDateString('fr-FR')}</td>
+                            <td>${item.email || '-'}</td>
+                            <td>${item.postal || '-'}</td>
+                        </tr>
+                    `).join('');
+                    break;
+                case 'surveys':
+                    headers = ['Date', 'Question 1', 'Question 2'];
+                    rows = data.map(item => `
+                        <tr>
+                            <td>${new Date(item.created_at).toLocaleDateString('fr-FR')}</td>
+                            <td>${item.q1 || '-'}</td>
+                            <td>${(item.q2 || '-').substring(0, 100)}${(item.q2 || '').length > 100 ? '...' : ''}</td>
+                        </tr>
+                    `).join('');
+                    break;
+            }
+
+            return `
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            ${headers.map(h => `<th>${h}</th>`).join('')}
+                        </tr>
+                    </thead>
+                    <tbody>
+                        ${rows}
+                    </tbody>
+                </table>
+            `;
+        }
+
+        // Mettre à jour les statistiques
+        function updateStats(type, count) {
+            const statId = 'stat-' + type;
+            const statEl = document.getElementById(statId);
+            if (statEl) statEl.textContent = count;
+        }
+
+        // Initialisation
+        (async () => {
+            if (await checkAuth()) {
+                // Charger toutes les stats
+                const tables = ['contact_form', 'engagements', 'volunteers', 'newsletters', 'surveys'];
+                for (const table of tables) {
+                    try {
+                        const { data, error } = await supabase.from(table).select('id', { count: 'exact', head: true });
+                        if (!error && data !== null) {
+                            const type = table.replace('_form', '').replace('s', '');
+                            updateStats(type, data.length || 0);
+                        }
+                    } catch (e) {
+                        console.error('Erreur stats ' + table, e);
+                    }
+                }
+                // Charger la section contact par défaut
+                loadData('contact');
+            }
+        })();
+    </script>
+</body>
+</html>
+

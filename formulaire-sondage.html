@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Formulaire Sondage</title>
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    .form-container{max-width:720px;margin:2rem auto;padding:1.25rem;background:#fff;border-radius:12px;box-shadow:0 8px 24px rgba(0,0,0,0.06)}
+    .form-row{margin-bottom:0.8rem}
+    label{display:block;margin-bottom:0.35rem;font-weight:600}
+    input[type="text"], textarea, select{width:100%;padding:10px;border-radius:8px;border:1px solid #ddd}
+    .form-actions{display:flex;gap:0.6rem;justify-content:center;margin-top:1rem}
+    .notice{margin-top:1rem;text-align:center;color:green}
+  </style>
+</head>
+<body>
+  <header class="header in-view">
+        <nav class="nav">
+            <div class="nav-brand">
+                <h1>France Démocratie</h1>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html">Accueil</a></li>
+                <li><a href="sondage.html">Sondage</a></li>
+                <!-- autres liens -->
+            </ul>
+        </nav>
+    </header>
+
+  <main class="main">
+    <section class="container">
+      <div class="form-container">
+        <h1>Participer au sondage</h1>
+        <form id="surveyForm">
+          <div class="form-row">
+            <label for="q1">1) Quel est votre principal sujet d'inquiétude ?</label>
+            <select id="q1" name="q1" required>
+              <option value="">— Choisir —</option>
+              <option>Emploi</option>
+              <option>Santé</option>
+              <option>Éducation</option>
+              <option>Logement</option>
+              <option>Autre</option>
+            </select>
+          </div>
+
+          <div class="form-row">
+            <label for="q2">2) Souhaitez-vous laisser un commentaire ? (optionnel)</label>
+            <textarea id="q2" name="q2" rows="4" placeholder="Votre message..."></textarea>
+          </div>
+
+          <div class="form-actions">
+            <button type="submit" class="cta-button">Envoyer</button>
+            <a href="sondage.html" class="cta-button" style="background:#fff;color:#0055a4;border:1px solid #e6eef9">Retour</a>
+          </div>
+
+          <div id="result" class="notice" role="status" aria-live="polite"></div>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Contact</h3>
+                    <p><a href="mailto:Francedemocratie2@gmail.com">Francedemocratie2@gmail.com</a></p>
+                    <p>Tél : 06 69 74 27 80</p>
+                    
+                </div>
+                <div class="footer-section">
+                    <h3>Liens rapides</h3>
+                    <div style="display:flex;gap:2rem;">
+                        <ul style="list-style:none;padding:0;margin:0;flex:1;">
+                            <li><a href="index.html">Accueil</a></li>
+                            <li><a href="programme.html">Programme</a></li>
+                            <li><a href="actualites.html">Actualités</a></li>
+                            <li><a href="engagement.html">S'engager</a></li>
+                            <li><a href="contact.html">Contact</a></li>
+                        </ul>
+                        <ul style="list-style:none;padding:0;margin:0;flex:1;">
+                            <li><a href="politique-confidentialite.html">Confidentialité</a></li>
+                            <li><a href="mentions-legales.html">Mentions légales</a></li>
+                            <li><a href="sondage.html">Sondage</a></li>
+                            <li><a href="soutenir-la-campagne.html">Soutenir la campagne</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h3>Suivez-nous</h3>
+                    <div class="social-links">
+                        <a href="https://www.facebook.com/share/16EXm9CXxg/?mibextid=wwXIfr">Facebook</a>
+                       
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div style="text-align:center; margin-top:2rem; font-size:0.95rem; color:#ccc;">
+            © 2025 Développé par <a href="https://marocgestionentrprendre.com" target="_blank" rel="noopener" style="color:#0055a4; text-decoration:underline;">Maroc Gestion Entreprendre</a>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="js/main.js"></script>
+    </footer>
+</body>
+</html>

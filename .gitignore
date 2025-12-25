@@ -1,0 +1,6 @@
+# Vidéos (trop volumineuses pour GitHub)
+videos/*.mp4
+
+# Fichiers de téléchargement incomplets
+*.crdownload
+

@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>À propos — France Démocratie</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .team-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; margin-top: 1.5rem; }
+        .team-card { background: var(--white); border-radius: 12px; padding: 1.5rem; box-shadow: 0 8px 24px rgba(16,24,40,0.06); text-align: center; transition: transform .22s ease, box-shadow .22s ease; }
+        .team-card:hover { transform: translateY(-6px); box-shadow: 0 16px 40px rgba(16,24,40,0.12); }
+        .team-card h4 { margin: 0.8rem 0 0.3rem; color: var(--primary-color); font-size: 1.1rem; }
+        .team-card p { margin: 0; color: var(--muted); font-size: 0.9rem; }
+        .team-avatar { width: 100px; height: 100px; margin: 0 auto 1rem; background: linear-gradient(135deg, #0055a4, #0084ff); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 2.5rem; }
+        .timeline { position: relative; margin-top: 2rem; }
+        .timeline-item { margin-bottom: 2rem; padding-left: 2.5rem; position: relative; }
+        .timeline-item::before { content: ''; position: absolute; left: 0; top: 0; width: 20px; height: 20px; background: var(--primary-color); border-radius: 50%; border: 3px solid #fff; box-shadow: 0 0 0 3px var(--primary-color); }
+        .timeline-item::after { content: ''; position: absolute; left: 8px; top: 20px; width: 3px; height: calc(100% + 20px); background: #e6eef9; }
+        .timeline-item:last-child::after { display: none; }
+        .timeline-item h4 { color: var(--primary-color); margin: 0 0 0.4rem; font-weight: 600; }
+        .timeline-item p { margin: 0; color: var(--muted); font-size: 0.95rem; }
+    </style>
+</head>
+<body>
+    <header class="header in-view">
+        <nav class="nav">
+            <div class="nav-brand">
+                <h1>France Démocratie</h1>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html">Accueil</a></li>
+                <li class="has-dropdown">
+                    <a href="programme.html" class="dropdown-toggle">Programme ▾</a>
+                    <ul class="dropdown">
+                        <li><a href="programme.html">Programme présidentiel</a></li>
+                        <li><a href="legislatives.html">Législatives</a></li>
+                        <li><a href="smic-1800.html">SMIC 1 800€</a></li>
+                        <li><a href="retraite-1200.html">Retraite 1 200€</a></li>
+                        <li><a href="urgence-sociale.html">Urgence sociale</a></li>
+                    </ul>
+                </li>
+                <li><a href="actualites.html">Actualités</a></li>
+                <li><a href="engagement.html">S'engager</a></li>
+                <li><a href="about.html">À propos</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="https://afrancetravail.com/" target="_blank" rel="noopener">Afrancetravail.com</a></li>
+            </ul>
+            <div class="nav-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
+
+    <main class="main">
+
+    <section class="page-hero reveal">
+        <div class="container">
+            <h1 class="animated-title">À propos</h1>
+            <p class="lead">Qui nous sommes, notre mission et l'équipe qui porte ce projet pour la France 2027.</p>
+        </div>
+    </section>
+
+    <!-- Mission et valeurs -->
+    <section id="mission" class="container reveal" style="margin-top: 2rem;">
+        <h2 class="animated-title">Notre mission</h2>
+        <div class="cards-grid">
+            <article class="card">
+                <h3>🎯 Vision</h3>
+                <p>Porter des propositions concrètes pour améliorer le quotidien des Français·es : emploi, protection sociale, santé, éducation et justice sociale.</p>
+            </article>
+            <article class="card">
+                <h3>💪 Engagement</h3>
+                <p>Un projet porté par des citoyens mobilisés, avec le soutien d'experts et de représentants locaux pour être au contact des territoires.</p>
+            </article>
+            <article class="card">
+                <h3>🤝 Solidarité</h3>
+                <p>Construire une France où chacun retrouve sa dignité, ses droits fondamentaux et la possibilité de vivre décemment.</p>
+            </article>
+        </div>
+    </section>
+
+    <!-- Qui est Imam Coban -->
+    <section id="candidat" class="container reveal">
+        <h2 class="animated-title">Imam Coban — Candidat 2027</h2>
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; align-items: center; margin-top: 1.5rem;">
+            <div>
+                <img src="images/banniere.jpg" alt="Imam Coban" style="width: 100%; border-radius: 12px; box-shadow: 0 8px 24px rgba(16,24,40,0.06);">
+            </div>
+            <div>
+                <h3 style="color: var(--primary-color); margin-top: 0;">Un engagement pour la justice sociale</h3>
+                <p>Imam Coban est un entrepreneur social et militant pour les droits des plus vulnérables. Depuis plus de 20 ans, il œuvre pour réduire les inégalités et défendre la solidarité.</p>
+                <ul style="color: var(--muted);">
+                    <li>✓ Fondateur d'associations d'aide aux plus démunis</li>
+                    <li>✓ Expert en politiques sociales et emploi</li>
+                    <li>✓ Mobilisateur de communautés locales</li>
+                    <li>✓ Défenseur de la justice économique</li>
+                </ul>
+                <p style="margin-top: 1rem;"><strong>Conviction :</strong> "La France a besoin d'un changement profond. Pas de promesses creuses, mais des actions concrètes pour retrouver la dignité."</p>
+            </div>
+        </div>
+    </section>
+            
+    <!-- Historique et parcours -->
+    <section id="parcours" class="container reveal">
+        <h2 class="animated-title">Chronologie du projet</h2>
+        <div class="timeline">
+            <div class="timeline-item">
+                <h4>2020 — Premières réflexions</h4>
+                <p>Imam Coban et un groupe de citoyens engagés commencent à discuter d'un projet politique alternatif face à la crise sociale.</p>
+            </div>
+
+            <div class="timeline-item">
+                <h4>2022 — Formation du collectif</h4>
+                <p>Constitution d'un collectif de militants, d'experts et de représentants locaux pour élaborer un programme ambitieux.</p>
+            </div>
+
+            <div class="timeline-item">
+                <h4>2023 — Lancement des consultations</h4>
+                <p>Tournées de consultation auprès des citoyens, syndicats et associations pour écouter et intégrer les besoins locaux.</p>
+            </div>
+
+            <div class="timeline-item">
+                <h4>2024 — Présentation du programme</h4>
+                <p>Présentation publique du programme présidentiel avec les trois piliers : urgence sociale, emploi et justice.</p>
+            </div>
+
+            <div class="timeline-item">
+                <h4>2025 — Campagne nationale</h4>
+                <p>Lancement officiel de la campagne présidentielle 2027 avec mobilisation des bénévoles et tournée nationale.</p>
+            </div>
+
+            <div class="timeline-item">
+                <h4>2027 — L'élection</h4>
+                <p>Élection présidentielle 2027 et mandats législatifs pour transformer les promesses en réalités.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Valeurs fondamentales -->
+    <section id="valeurs" class="container reveal">
+        <h2 class="animated-title">Nos valeurs fondamentales</h2>
+        <div class="cards-grid">
+            <article class="card">
+                <h3>⚖️ Justice</h3>
+                <p>Un système judiciaire équitable et indépendant, où chacun a accès au droit et à la défense de ses intérêts.</p>
+            </article>
+            <article class="card">
+                <h3>🤝 Solidarité</h3>
+                <p>Aucun citoyen ne doit être laissé de côté. Nous construisons ensemble une société plus juste et inclusive.</p>
+            </article>
+            <article class="card">
+                <h3>💡 Innovation</h3>
+                <p>Des solutions pragmatiques et modernes pour répondre aux défis d'aujourd'hui et de demain.</p>
+            </article>
+            <article class="card">
+                <h3>🌍 Durabilité</h3>
+                <p>Une économie respectueuse de l'environnement et capable de produire emplois et bien-être pour les générations futures.</p>
+            </article>
+            <article class="card">
+                <h3>🗣️ Transparence</h3>
+                <p>Pas de promesses creuses. Chaque engagement est chiffré, calendérisé et évalué régulièrement.</p>
+            </article>
+            <article class="card">
+                <h3>🎯 Efficacité</h3>
+                <p>Une administration au service des citoyens, sans bureaucratie excessive, orientée vers les résultats.</p>
+            </article>
+        </div>
+    </section>
+
+    <!-- Soutiens et partenaires -->
+    <section id="soutiens" class="container reveal">
+        <h2 class="animated-title">Soutiens et partenaires</h2>
+        <p class="lead" style="text-align: center; margin-bottom: 1.5rem;">Le projet bénéficie du soutien d'experts, d'associations et de collectivités territoriales.</p>
+        <div class="cards-grid">
+            <article class="card">
+                <h3>Syndicats</h3>
+                <p>Principaux syndicats de travailleurs, de fonctionnaires et d'artisans soutiennent le projet pour l'emploi et la protection sociale.</p>
+            </article>
+            <article class="card">
+                <h3>Associations humanitaires</h3>
+                <p>Réseaux d'associations d'aide aux plus démunis, aux migrants et aux victimes de discriminations.</p>
+            </article>
+            <article class="card">
+                <h3>Collectivités territoriales</h3>
+                <p>Maires, conseils régionaux et départementaux mobilisés pour l'application locale du programme.</p>
+            </article>
+            <article class="card">
+                <h3>Experts universitaires</h3>
+                <p>Économistes, sociologues et juristes qui contribuent à l'élaboration des politiques publiques.</p>
+            </article>
+            <article class="card">
+                <h3>Organisations internatio​nales</h3>
+                <p>Partenariats avec des organisations européennes et mondiales pour l'emploi et la solidarité.</p>
+            </article>
+            <article class="card">
+                <h3>Citoyens mobilisés</h3>
+                <p>Plus de 10 000 bénévoles qui portent le projet sur le terrain et dans leurs communautés.</p>
+            </article>
+        </div>
+    </section>
+
+    <!-- Appel à l'action -->
+    <section class="container reveal" style="text-align: center; margin-top: 3rem;">
+        <h2 class="animated-title">Rejoignez le mouvement</h2>
+        <p style="font-size: 1.1rem; color: var(--muted); margin: 1rem 0 2rem;">Ensemble, construisons une France plus juste et plus solidaire. Votre engagement compte.</p>
+        <div style="display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap;">
+            <a href="engagement.html" class="cta-button">S'engager</a>
+            <a href="contact.html" class="cta-button" style="background: #fff; color: var(--primary-color); border: 1px solid #e6eef9;">Nous contacter</a>
+            <a href="sondage.html" class="cta-button" style="background: #fff; color: var(--primary-color); border: 1px solid #e6eef9;">Participer au sondage</a>
+        </div>
+    </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Contact</h3>
+                    <p>Francedemocratie2@gmail.com</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Réseaux sociaux</h3>
+                    <div class="social-links">
+                        <a href="https://www.facebook.com/share/16EXm9CXxg/?mibextid=wwXIfr">Facebook</a>
+                        
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h3>Légal</h3>
+                    <a href="mentions-legales.html">Mentions légales</a>
+                    <a href="politique-confidentialite.html">Politique de confidentialité</a>
+                </div>
+            </div>
+        </div>
+        <div style="text-align:center; margin-top:2rem; font-size:0.95rem; color:#ccc;">
+            © 2025 Développé par <a href="https://marocgestionentrprendre.com" target="_blank" rel="noopener" style="color:#0055a4; text-decoration:underline;">Maroc Gestion Entreprendre</a>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,68 @@
+/* Tablettes */
+@media (max-width: 768px) {
+    .nav-menu {
+        position: fixed;
+        inset: 70px 0 auto 0;
+        flex-direction: column;
+        background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+        width: 100%;
+        text-align: center;
+        transition: transform 0.25s ease, opacity 0.25s ease;
+        box-shadow: 0 10px 27px rgba(0,0,0,0.05);
+        padding: 1.5rem 0;
+        transform: translateY(-12px);
+        opacity: 0;
+        pointer-events: none;
+        backdrop-filter: blur(10px);
+    }
+
+    .nav-menu a {
+        color: #fff;
+    }
+
+    .nav-menu.active {
+        transform: translateY(0);
+        opacity: 1;
+        pointer-events: auto;
+    }
+
+    .nav-toggle {
+        display: flex;
+    }
+    .nav-toggle span {
+        background: #fff;
+    }
+
+    .hero-content h2 {
+        font-size: 2rem;
+    }
+
+    .programme-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+    .nav {
+        padding: 1rem;
+    }
+
+    .hero {
+        padding: 120px 0 60px;
+    }
+
+    .hero-content h2 {
+        font-size: 1.8rem;
+    }
+
+    .programme,
+    .actualites,
+    .engagement {
+        padding: 60px 0;
+    }
+
+    .container {
+        padding: 0 15px;
+    }
+}

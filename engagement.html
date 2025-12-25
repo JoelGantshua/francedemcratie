@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>S'engager — France Démoccratie</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header class="header in-view">
+        <nav class="nav">
+            <div class="nav-brand">
+                <h1>France Démocratie</h1>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html">Accueil</a></li>
+                <li class="has-dropdown">
+                    <a href="programme.html" class="dropdown-toggle">Programme ▾</a>
+                    <ul class="dropdown">
+                        <li><a href="programme.html#programme-presidentiel">Programme présidentiel</a></li>
+                        <li><a href="legislatives.html">Législatives</a></li>
+                        <li><a href="justice-economique.html">Justice économique</a></li>
+                        <li><a href="urgence-sociale.html">Urgence sociale</a></li>
+                        <li><a href="retraite-1200.html">Retraite 1200 €</a></li>
+                        <li><a href="smic-1800.html">SMIC 1800 €</a></li>
+                        <li><a href="sondage.html">Sondage</a></li>
+                    </ul>
+                </li>
+                <li><a href="actualites.html">Actualités</a></li>
+                <li><a href="engagement.html">S'engager</a></li>
+                <li><a href="about.html">À propos</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="https://afrancetravail.com/" target="_blank" rel="noopener">Afrancetravail.com</a></li>
+            </ul>
+            <div class="nav-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
+
+    <main class="main">
+
+    <section class="page-hero reveal">
+        <div class="container">
+            <h1 class="animated-title">S'engager</h1>
+            <p class="lead">Participez à la campagne : bénévolat, coordination locale, dons ou relais d'information.</p>
+        </div>
+    </section>
+
+    <section class="container reveal" style="margin-top:2rem;">
+        <div class="cards-grid">
+            <article class="card">
+                <h3>🙋 Bénévolat terrain</h3>
+                <p>Porte-à-porte, tractage, accueil d'événements et soutien logistique dans votre ville.</p>
+            </article>
+            <article class="card">
+                <h3>📣 Relais digital</h3>
+                <p>Partage des actualités, modération des groupes, création de contenus et live-tweets.</p>
+            </article>
+            <article class="card">
+                <h3>🤝 Coordination locale</h3>
+                <p>Organisation des équipes, gestion des agendas et relation avec les associations locales.</p>
+            </article>
+        </div>
+    </section>
+
+    <section class="container reveal" style="margin-top:1.5rem;">
+        <h2>Comment ça marche ?</h2>
+        <ul style="margin-top:0.8rem; line-height:1.6;">
+            <li>1. Choisissez votre mode d'engagement (terrain, digital, coordination, don).</li>
+            <li>2. Remplissez le formulaire ci-dessous pour être contacté rapidement.</li>
+            <li>3. Rejoignez un groupe local ou une équipe thématique dès cette semaine.</li>
+        </ul>
+    </section>
+
+    <section id="engagement" class="engagement">
+        <div class="container reveal">
+            <h2 class="animated-title">Rejoignez-nous</h2>
+            <form class="engagement-form" id="signup-form">
+                <input type="email" name="email" placeholder="Votre email" required>
+                <input type="text" name="name" placeholder="Votre nom" required>
+                <input type="tel" name="phone" placeholder="Votre téléphone">
+                <select name="type_engagement" required>
+                    <option value="">Type d'engagement</option>
+                    <option value="militant">Militant</option>
+                    <option value="donateur">Donateur</option>
+                    <option value="benevole">Bénévole</option>
+                    <option value="deja-engage">Déjà engagé</option>
+                </select>
+                <label style="display:block;margin-top:8px;">
+                    <input type="checkbox" id="deja-engage-checkbox"> Je suis déjà engagé
+                </label>
+                <div id="deja-engage-fields" style="display:none;margin-top:10px;">
+                    <input type="text" name="role" placeholder="Votre rôle (ex : coordinateur local)">
+                    <input type="text" name="organisation" placeholder="Organisation / Collectif (optionnel)">
+                    <label style="font-size:0.9rem;color:#555;margin-top:6px;">Depuis :</label>
+                    <input type="month" name="depuis">
+                    <textarea name="deja_message" placeholder="Racontez votre engagement / disponibilités" rows="3"></textarea>
+                </div>
+                <button type="submit" class="cta-button" style="font-size:1.1rem;">S'engager</button>
+            </form>
+        </div>
+    </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Contact</h3>
+                    <p><a href="mailto:Francedemocratie2@gmail.com">Francedemocratie2@gmail.com</a></p>
+                    <p>Tél : 06 69 74 27 80</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Liens rapides</h3>
+                    <div style="display:flex;gap:2rem;">
+                        <ul style="list-style:none;padding:0;margin:0;flex:1;">
+                            <li><a href="index.html">Accueil</a></li>
+                            <li><a href="programme.html">Programme</a></li>
+                            <li><a href="actualites.html">Actualités</a></li>
+                            <li><a href="engagement.html">S'engager</a></li>
+                            <li><a href="contact.html">Contact</a></li>
+                        </ul>
+                        <ul style="list-style:none;padding:0;margin:0;flex:1;">
+                            <li><a href="politique-confidentialite.html">Confidentialité</a></li>
+                            <li><a href="mentions-legales.html">Mentions légales</a></li>
+                            <li><a href="sondage.html">Sondage</a></li>
+                            <li><a href="soutenir-la-campagne.html">Soutenir la campagne</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h3>Suivez-nous</h3>
+                    <div class="social-links">
+                        <a href="https://www.facebook.com/share/16EXm9CXxg/?mibextid=wwXIfr">Facebook</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div style="text-align:center; margin-top:2rem; font-size:0.95rem; color:#ccc;">
+            © 2025 Développé par <a href="https://marocgestionentrprendre.com" target="_blank" rel="noopener" style="color:#0055a4; text-decoration:underline;">Maroc Gestion Entreprendre</a>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>

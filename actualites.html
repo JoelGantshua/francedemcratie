@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Actualités — France Démocratie</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .news-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 1.5rem; margin-top: 1.5rem; }
+        .news-item { background: var(--white); border-radius: 12px; overflow: hidden; box-shadow: 0 8px 24px rgba(16,24,40,0.06); transition: transform .22s ease, box-shadow .22s ease; }
+        .news-item:hover { transform: translateY(-6px); box-shadow: 0 16px 40px rgba(16,24,40,0.12); }
+        .news-date { background: var(--primary-color); color: #fff; padding: 0.6rem 1rem; font-size: 0.9rem; font-weight: 600; }
+        .news-content { padding: 1.25rem; }
+        .news-content h3 { margin: 0 0 0.6rem; color: var(--primary-color); font-size: 1.15rem; }
+        .news-content p { margin: 0 0 0.8rem; color: var(--muted); font-size: 0.95rem; line-height: 1.5; }
+        .news-read-btn { display: inline-block; padding: 8px 16px; background: var(--primary-color); color: #fff; text-decoration: none; border-radius: 8px; font-weight: 600; transition: background .2s ease; }
+        .news-read-btn:hover { background: #003d7a; }
+        .news-category { display: inline-block; background: #f0f8ff; color: var(--primary-color); padding: 4px 10px; border-radius: 6px; font-size: 0.85rem; font-weight: 600; margin-bottom: 0.6rem; }
+    </style>
+</head>
+<body>
+    <header class="header in-view">
+        <nav class="nav">
+            <div class="nav-brand">
+                <h1>France Démocratie</h1>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html">Accueil</a></li>
+                <li class="has-dropdown">
+                    <a href="programme.html" class="dropdown-toggle">Programme ▾</a>
+                    <ul class="dropdown">
+                        <li><a href="programme.html#programme-presidentiel">Programme présidentiel</a></li>
+                        <li><a href="programme.html#legislatives">Législatives</a></li>
+                        <li><a href="programme.html#justice-economique">Justice économique</a></li>
+                    </ul>
+                </li>
+                <li><a href="actualites.html">Actualités</a></li>
+                <li><a href="engagement.html">S'engager</a></li>
+                <li><a href="about.html">À propos</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="https://afrancetravail.com/" target="_blank" rel="noopener">Afrancetravail.com</a></li>
+            </ul>
+            <div class="nav-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
+
+    <main class="main">
+
+    <section class="page-hero reveal">
+        <div class="container">
+            <h1 class="animated-title">Actualités</h1>
+            <p class="lead">Suivez les dernières déclarations, meetings et annonces de la campagne présidentielle 2027.</p>
+        </div>
+    </section>
+
+    <section id="actualites" class="actualites">
+        <div class="container reveal">
+            <h2 class="animated-title">Dernières Actualités</h2>
+            <div style="display:flex;justify-content:center;gap:2rem;margin-bottom:2rem;">
+                <svg width="60" height="60" viewBox="0 0 60 60"><circle cx="30" cy="30" r="28" fill="#eaf6ff"/><text x="50%" y="54%" text-anchor="middle" font-size="2.2rem" dy=".3em">📰</text></svg>
+            </div>
+
+            <div class="news-grid" id="news-container">
+                <!-- Actualité 1 -->
+                <article class="news-item">
+                    <div class="news-date">26 novembre 2025</div>
+                    <div class="news-content">
+                        <span class="news-category">Campagne</span>
+                        <h3>Imam Coban lance sa tournée nationale</h3>
+                        <p>La campagne présidentielle 2027 s'accélère. Imam Coban et son équipe sillonnent le pays pour écouter les Français et présenter les mesures d'urgence sociale.</p>
+                        <a href="#" class="news-read-btn">Lire plus</a>
+                    </div>
+                </article>
+
+                <!-- Actualité 2 -->
+                <article class="news-item">
+                    <div class="news-date">24 novembre 2025</div>
+                    <div class="news-content">
+                        <span class="news-category">Programme</span>
+                        <h3>Mesure SMIC 1 800€ : premières réactions positives</h3>
+                        <p>L'annonce du SMIC net à 1 800 € suscite un large soutien parmi les syndicats et les associations de consommateurs. Les PME demandent des précisions sur l'accompagnement.</p>
+                        <a href="smic-1800.html" class="news-read-btn">En savoir plus</a>
+                    </div>
+                </article>
+
+                <!-- Actualité 3 -->
+                <article class="news-item">
+                    <div class="news-date">22 novembre 2025</div>
+                    <div class="news-content">
+                        <span class="news-category">Social</span>
+                        <h3>Plan Urgence Sociale : 8 milliards € d'aide immédiate</h3>
+                        <p>Le candidat Coban dévoile son plan d'urgence pour les plus démunis : allocations d'urgence, refuges d'hiver et aide alimentaire renforcée dès les 100 premiers jours.</p>
+                        <a href="urgence-sociale.html" class="news-read-btn">Découvrir le plan</a>
+                    </div>
+                </article>
+
+                <!-- Actualité 4 -->
+                <article class="news-item">
+                    <div class="news-date">20 novembre 2025</div>
+                    <div class="news-content">
+                        <span class="news-category">Engagement</span>
+                        <h3>10 000 bénévoles rejoignent la campagne</h3>
+                        <p>La mobilisation citoyenne s'amplifie. Depuis le lancement de la plateforme d'engagement, plus de 10 000 citoyens ont décidé de soutenir le projet de changement social.</p>
+                        <a href="engagement.html" class="news-read-btn">S'engager</a>
+                    </div>
+                </article>
+
+                <!-- Actualité 5 -->
+                <article class="news-item">
+                    <div class="news-date">18 novembre 2025</div>
+                    <div class="news-content">
+                        <span class="news-category">Retraite</span>
+                        <h3>Retraite 1 200€ : financement assuré sans augmenter les impôts</h3>
+                        <p>Présentation détaillée du mécanisme de financement du SMIC retraite. La lutte contre la fraude fiscale finance 60% de la mesure, sans nouvelles taxes pour la classe moyenne.</p>
+                        <a href="retraite-1200.html" class="news-read-btn">Lire le détail</a>
+                    </div>
+                </article>
+
+                <!-- Actualité 6 -->
+                <article class="news-item">
+                    <div class="news-date">16 novembre 2025</div>
+                    <div class="news-content">
+                        <span class="news-category">Sondage</span>
+                        <h3>Sondage : 72% des Français soutiennent les mesures sociales</h3>
+                        <p>Un sondage exclusif révèle que la majorité des Français approuve le programme d'urgence sociale et les mesures de revalorisation des salaires et retraites.</p>
+                        <a href="sondage.html" class="news-read-btn">Voir les résultats</a>
+                    </div>
+                </article>
+
+                <!-- Actualité 7 -->
+                <article class="news-item">
+                    <div class="news-date">14 novembre 2025</div>
+                    <div class="news-content">
+                        <span class="news-category">Législatives</span>
+                        <h3>Candidatures législatives 2027 : le mouvement s'organise</h3>
+                        <p>Les investitures pour les élections législatives sont en cours. Des centaines de candidats de tous horizons répondent à l'appel pour une Assemblée nouvelle et plus représentative.</p>
+                        <a href="legislatives.html" class="news-read-btn">Participer</a>
+                    </div>
+                </article>
+
+                <!-- Actualité 8 -->
+                <article class="news-item">
+                    <div class="news-date">12 novembre 2025</div>
+                    <div class="news-content">
+                        <span class="news-category">Justice</span>
+                        <h3>Justice pour tous : première réunion des experts</h3>
+                        <p>Un collectif d'experts en droit et en criminologie se réunit pour affiner les propositions du candidat en matière de justice sociale et d'accès équitable au système judiciaire.</p>
+                        <a href="justice.html" class="news-read-btn">En savoir plus</a>
+                    </div>
+                </article>
+
+                <!-- Actualité 9 -->
+                <article class="news-item">
+                    <div class="news-date">10 novembre 2025</div>
+                    <div class="news-content">
+                        <span class="news-category">Médias</span>
+                        <h3>Interview exclusive : "La France a besoin de solidarité"</h3>
+                        <p>Imam Coban s'exprime dans un grand média national sur sa vision pour 2027 : une France où chacun trouve sa place, avec justice et dignité pour tous.</p>
+                        <a href="#" class="news-read-btn">Regarder/Lire</a>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section : Rester informé -->
+    <section class="container reveal" style="margin-top: 3rem;">
+        <h2 class="animated-title">Rester informé</h2>
+        <div class="cards-grid">
+            <article class="card">
+                <h3>Newsletter</h3>
+                <p>Recevez les dernières actualités de la campagne directement dans votre boîte mail.</p>
+                <form id="newsletter-form-actualites" style="margin-top: 1rem;">
+                    <input type="email" name="email" placeholder="Votre email" required style="width:100%;padding:10px;border-radius:8px;border:1px solid #ddd;margin-bottom:0.6rem;">
+                    <button type="submit" class="cta-button" style="width:100%;">S'abonner</button>
+                </form>
+            </article>
+
+            <article class="card">
+                <h3>Réseaux sociaux</h3>
+                <p>Suivez-nous sur les réseaux sociaux pour les mises à jour en temps réel.</p>
+                <div style="display:flex;justify-content:center;gap:0.8rem;margin-top:1rem;flex-wrap:wrap;">
+                    <a href="https://www.facebook.com/share/16EXm9CXxg/?mibextid=wwXIfr" class="cta-button" style="flex:1;min-width:90px;text-align:center;">Facebook</a>
+                    
+                </div>
+            </article>
+
+            <article class="card">
+                <h3>Contactez-nous</h3>
+                <p>Vous avez une question ? Contactez l'équipe de campagne pour plus d'informations.</p>
+                <a href="contact.html" class="cta-button" style="display:inline-block;margin-top:1rem;width:100%;text-align:center;">Nous contacter</a>
+            </article>
+        </div>
+    </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Contact</h3>
+                    <p><a href="mailto:Francedemocratie2@gmail.com">Francedemocratie2@gmail.com</a></p>
+                    <p>Tél : 06 69 74 27 80</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Liens rapides</h3>
+                    <div style="display:flex;gap:2rem;">
+                        <ul style="list-style:none;padding:0;margin:0;flex:1;">
+                            <li><a href="index.html">Accueil</a></li>
+                            <li><a href="programme.html">Programme</a></li>
+                            <li><a href="actualites.html">Actualités</a></li>
+                            <li><a href="engagement.html">S'engager</a></li>
+                            <li><a href="contact.html">Contact</a></li>
+                        </ul>
+                        <ul style="list-style:none;padding:0;margin:0;flex:1;">
+                            <li><a href="politique-confidentialite.html">Confidentialité</a></li>
+                            <li><a href="mentions-legales.html">Mentions légales</a></li>
+                            <li><a href="sondage.html">Sondage</a></li>
+                            <li><a href="soutenir-la-campagne.html">Soutenir la campagne</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h3>Suivez-nous</h3>
+                    <div class="social-links">
+                        <a href="https://www.facebook.com/share/16EXm9CXxg/?mibextid=wwXIfr">Facebook</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div style="text-align:center; margin-top:2rem; font-size:0.95rem; color:#ccc;">
+            © 2025 Développé par <a href="https://marocgestionentrprendre.com" target="_blank" rel="noopener" style="color:#0055a4; text-decoration:underline;">Maroc Gestion Entreprendre</a>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>

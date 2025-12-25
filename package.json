@@ -1,0 +1,16 @@
+{
+  "name": "presidentielle2027",
+  "version": "1.0.0",
+  "description": "Site officiel de la campagne présidentielle 2027",
+  "scripts": {
+    "build": "echo 'No build step required for static site'"
+  },
+  "keywords": [
+    "presidentielle",
+    "2027",
+    "campagne"
+  ],
+  "author": "",
+  "license": "MIT"
+}
+
