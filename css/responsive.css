@@ -17,7 +17,7 @@
     }
 
     .nav-menu a {
-        color: #fff;
+        color: #21034d;
     }
 
     .nav-menu.active {
@@ -30,7 +30,7 @@
         display: flex;
     }
     .nav-toggle span {
-        background: #fff;
+        background: #0a2646;
     }
 
     .hero-content h2 {
