@@ -51,9 +51,9 @@
 
 /* Reset et variables */
 :root {
-    --primary-color: #1a4a19;      /* Bleu profond */
-    --secondary-color: #0a2367;   /* Rouge */
-    --accent: #6fa8ff;            /* Bleu clair d'accent */
+    --primary-color: #0f15b7;      /* Bleu profond */
+    --secondary-color: #ad0808;   /* Rouge */
+    --accent: #0f15b7;            /* Bleu clair d'accent */
     --text-color: #1b1f29;
     --muted: #5f6472;
     --background-color: #97998a;  /* Fond bleu clair */
@@ -213,6 +213,8 @@ footer.footer { margin-top: 0; }
     flex-shrink: 0;
 }
 
+
+
 .nav-menu {
     display: flex;
     flex-direction: row;
@@ -226,7 +228,7 @@ footer.footer { margin-top: 0; }
 
 .nav-menu a {
     text-decoration: none;
-    color: #0a0808;
+    color: #ffffff;
     font-weight: 500;
     transition: color 0.3s;
     position: relative;
